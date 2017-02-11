@@ -1,0 +1,34 @@
+﻿■■Basic Rule
+
+<EncodedText>		::= <Element> | <Element> <Element>
+<Element>			::= <PlainText> | <Object>
+
+■PlainText
+
+<PlainText>			::= <Chars> [<EOL> | <EOF>]
+<Chars>				::= <Char> | <Char> <Char>
+<Char>				::= A | B | C ... all unicode character.
+
+■Object
+
+<Object>			::= <BlockObject> | <InlineObject>
+
+<BlockObject>		::= <ObjectIdentifier> <PlainText>
+<ObjectIdentifier>	::= * | # |
+The ObjectIdentifiew will be added.
+
+<InlineObject>		::= <ObjectBegin> <Chars> <ObjectEnd>
+<ObjectBegin>		::= [ | == | ===
+<ObjectEnd>			::= ] | == | ===
+The ObjectBeing and the ObjectEnd will be added.
+
+■■Rendering
+
+* means text in list. likes <ul>.
+# means text with number in list. likes <ol>.
+
+== means level1 title. likes <h1>.
+=== means level2 title. likes <h2>.
+
+
+
